@@ -23,3 +23,11 @@ While the individual NixOS modules involved are well-documented, a set of good e
 Contributions of more examples are welcome!
 
 They should be well-commented and contain running instructions for beginners (see the existing examples).
+
+
+## Usage
+
+Clone this repo with `git clone --recursive`, because it contains a submodule to pin `nixpkgs`.
+
+After switching branches/commits, run `git submodule update --init --recursive` to ensure the submodule is updated.
+Alternatively, run `./setup-git-hooks` to enable automatic submodule updating upon `git checkout` and `git rebase`.
