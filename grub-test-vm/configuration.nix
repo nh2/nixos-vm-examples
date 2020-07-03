@@ -70,11 +70,12 @@ in
       '';
 
       # This is the functionality we want to test.
-      # From inside the VM, you can
+      # From inside the VM, you can run:
       #     cd host-dir
       #     NIX_PATH=.:nixos-config=$PWD/grub-test-vm/configuration.nix nixos-rebuild switch --install-bootloader --fast
       loader.grub.extraGrubInstallArgs = [
-        "--modules=nativedisk ahci pata part_gpt" "part_msdos diskfilter mdraid1x lvm ext2"
+        # Uncomment to try this change:
+        # "--modules=nativedisk ahci pata part_gpt part_msdos diskfilter mdraid1x lvm ext2"
       ];
 
       # Copy VM configuration into guest so that we can use `nixos-rebuild` in there.
