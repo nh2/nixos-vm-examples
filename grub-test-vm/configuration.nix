@@ -26,12 +26,10 @@
 # Note by default `ping` will not work, but other Internet stuff will, see
 # https://wiki.qemu.org/Documentation/Networking#User_Networking_.28SLIRP.29
 #
-# The VM HD is stored in `./nixos.qcow2`. Delete it if you want to start from scratch.
-# It is also important to delete it whenever you change this `configuration.nix`
-# file, because `postBootCommands` below copies it into the VM only then,
-# and even something benign like comments differing can result in the next
-# `nixos-rebuild` in the VM requiring to download a lot of stuff instead of
-# being a no-op.
+# Note that running `nixos-rebuild` in the VM may do a lot of downloads,
+# even though the files it downloads are apparently already present
+# in the nix store, see:
+#     https://discourse.nixos.org/t/how-to-build-a-nixos-vm-with-nix-in-which-nixos-rebuild-is-a-no-op/7937
 
 { pkgs, lib, config, ... }:
 
