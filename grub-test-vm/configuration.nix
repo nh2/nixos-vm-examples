@@ -104,6 +104,9 @@ in
     # http://blog.patapon.info/nixos-local-vm/#accessing-the-vm-with-ssh
     services.openssh.enable = true;
     services.openssh.permitRootLogin = "yes";
+    # Give root an empty password to ssh in.
+    users.extraUsers.root.password = "";
+    users.mutableUsers = false;
 
     environment.systemPackages = with pkgs; [
       git
@@ -111,9 +114,6 @@ in
       vim
       nix-diff
     ];
-
-    users.extraUsers.root.password = "";
-    users.mutableUsers = false;
 
   };
 }
