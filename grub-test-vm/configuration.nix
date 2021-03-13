@@ -17,7 +17,7 @@
 #
 # Even better, with SSH:
 #
-#     rm -f nixos.qcow2 && env QEMU_NET_OPTS=hostfwd=tcp::2221-:22
+#     rm -f nixos.qcow2 && env QEMU_NET_OPTS=hostfwd=tcp::2221-:22 result/bin/run-nixos-vm
 #
 # Then you can ssh in using:
 #
